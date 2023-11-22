@@ -37,7 +37,7 @@ public class HttpMessageHandlers : ControllerBase
     [ProducesResponseType(typeof(OrdersResponse), (int)HttpStatusCode.OK)]
     public async Task<IActionResult> AmendOrder(AmendOrderRequest request, CancellationToken token)
     {
-        var domainResponse = await _sender.Send(new Domain.CreateNewOrderRequest()
+        var domainResponse = await _sender.Send(new Domain.AmendOrderRequest()
         {
             Id = request.Id,
             Content = request.Content,
@@ -54,7 +54,7 @@ public class HttpMessageHandlers : ControllerBase
     [ProducesResponseType(typeof(OrdersResponse), (int)HttpStatusCode.OK)]
     public async Task<IActionResult> CancelOrder(CancelOrderRequest request, CancellationToken token)
     {
-        var domainResponse = await _sender.Send(new Domain.CreateNewOrderRequest()
+        var domainResponse = await _sender.Send(new Domain.CancelOrderRequest()
         {
             Id = request.Id,
         }, token);
