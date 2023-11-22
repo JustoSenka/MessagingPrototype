@@ -1,0 +1,28 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "MessagingPrototype.GrpcMessages";
+
+service Orders {
+  rpc CreateNewOrder (CreateNewOrderRequest) returns (OrdersResponse);
+  rpc AmendOrder (AmendOrderRequest) returns (OrdersResponse);
+  rpc CancelOrder (CancelOrderRequest) returns (OrdersResponse);
+}
+
+message CreateNewOrderRequest {
+  string Id = 1;
+  string Content = 2;
+}
+
+message AmendOrderRequest {
+  string Id = 1;
+  string Content = 2;
+}
+
+message CancelOrderRequest {
+  string Id = 2;
+}
+
+message OrdersResponse {
+  string Id = 1;
+  string Message = 2;
+}

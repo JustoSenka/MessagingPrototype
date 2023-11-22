@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc" Version="2.46.6" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.59.0" />
+    <PackageReference Include="Grpc.AspNetCore.Server" Version="2.59.0" />
+    <PackageReference Include="Grpc.Auth" Version="2.59.0" />
+    <PackageReference Include="Grpc.Core" Version="2.46.6" />
+    <PackageReference Include="Grpc.HealthCheck" Version="2.59.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.59.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="MediatR" Version="12.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="**\*.proto" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MessagingPrototype.Application\MessagingPrototype.Application.csproj" />
+    <ProjectReference Include="..\MessagingPrototype.GrpcMessages\MessagingPrototype.GrpcMessages.csproj" />
+    <ProjectReference Include="..\MessagingPrototype.HttpMessages\MessagingPrototype.HttpMessages.csproj" />
+  </ItemGroup>
+
+</Project>
